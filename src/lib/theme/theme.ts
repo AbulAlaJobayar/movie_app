@@ -1,7 +1,7 @@
 
 
 import { configureFonts, MD3LightTheme } from 'react-native-paper';
-import { StyleSheet } from 'react-native';
+import { StyleSheet, ViewStyle } from 'react-native';
 
 // Extend the default theme
 export const theme = {
@@ -38,17 +38,17 @@ export const theme = {
   }),
 };
 
-// // TypeScript support
-// declare global {
-//   namespace ReactNativePaper {
-//     interface ThemeColors {
-//       secondary: string;   // Extend colors
-//     }
-//     interface Theme {
-//       styles: {           // Extend theme with styles
-//         button: ViewStyle;
-//         shadow: ViewStyle;
-//       };
-//     }
-//   }
-// }
+// TypeScript support
+declare global {
+  namespace ReactNativePaper {
+    interface ThemeColors {
+      secondary: string;   // Extend colors
+    }
+    interface Theme {
+      styles: {           // Extend theme with styles
+        button: ViewStyle;
+        shadow: ViewStyle;
+      };
+    }
+  }
+}
