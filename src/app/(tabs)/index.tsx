@@ -6,7 +6,6 @@ import React, { useState } from "react";
 import {
   ActivityIndicator,
   FlatList,
-  Image,
   ScrollView,
   Text,
   View,
@@ -20,7 +19,7 @@ const Index = () => {
     data: movie,
     loading: movieLoading,
     error: movieError,
-  } = useFetch(() => fetchMovie({ query: "" }));
+  } = useFetch(() => fetchMovie({ query: "avenger" }));
   return (
     <View className="flex-1 bg-primary">
       <ScrollView
@@ -31,10 +30,9 @@ const Index = () => {
           paddingBottom: 10,
         }}
       >
-        <Image
-          source={require("../../assets/images/app_image.png")}
-          className=" w-12 h-10 mt-20 mb-5 mx-auto"
-        />
+        <Text className="w-full h-10 mt-20  text-center mb-10 mx-auto  text-white font-bold text-4xl">
+          MOVIE FLIX
+        </Text>
 
         {movieLoading ? (
           <ActivityIndicator
@@ -53,7 +51,7 @@ const Index = () => {
               onPress={() => router.push("/search")}
             />
             <>
-              <Text className="font-bold font-white  text-xl mt-5 mb-4">
+              <Text className="font-bold text-white  text-xl mt-5 mb-4">
                 Latest Movies
               </Text>
               <FlatList
