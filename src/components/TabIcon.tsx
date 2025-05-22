@@ -32,11 +32,7 @@ const TabIcon = ({ icon, focused, name }: TTabIconProps) => {
   // Animated styles for the icon
   const iconStyle = useAnimatedStyle(() => ({
     transform: [{ scale: withSpring(focused ? 1.2 : 1) }],
-    color: interpolateColor(
-      focused ? 1 : 0,
-      [0, 1],
-      ["#A8B5DB", "#151312"]
-    ),
+    color: interpolateColor(focused ? 1 : 0, [0, 1], ["#A8B5DB", "#151312"]),
   }));
 
   // Animated styles for the text
@@ -51,16 +47,16 @@ const TabIcon = ({ icon, focused, name }: TTabIconProps) => {
         className="absolute flex-row min-w-[120px] min-h-14 rounded-full overflow-hidden"
         style={bgStyle}
       />
-      
+
       <View className="flex-row items-center px-4 py-2 ">
         <Animated.Text style={iconStyle}>
-          <Icon name={icon} size={15} />
+          <Icon name={icon} size={15} className="color-white" />
         </Animated.Text>
-        
+
         {focused && (
-          <Animated.Text 
+          <Animated.Text
             style={textStyle}
-            className="text-base font-semibold ml-2"
+            className="text-base font-semibold ml-2 color-white"
           >
             {name}
           </Animated.Text>
